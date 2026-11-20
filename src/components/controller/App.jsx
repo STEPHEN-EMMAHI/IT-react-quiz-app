@@ -2,7 +2,7 @@ import HomePage from "../model/HomePage";
 
 function App() {
   return (
-    <div className="font-mono">
+    <div>
       <HomePage />
     </div>
   );
