@@ -2,7 +2,7 @@ import HomePage from "../model/HomePage";
 
 function App() {
   return (
-    <div>
+    <div className="tracking-wide">
       <HomePage />
     </div>
   );
