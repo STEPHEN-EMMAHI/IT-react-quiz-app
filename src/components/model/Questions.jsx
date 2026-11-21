@@ -12,6 +12,13 @@ export default function Question({
 
   return (
     <main className="h-screen flex flex-col justify-center items-center gap-4">
+      {/* question 1/total question */}
+      <div>
+        <p>
+          Question {currentIndex + 1} / {numOfQuestions}
+        </p>
+      </div>
+
       <h3 className="w-full max-w-2xl text-center px-2">
         {currentQuestion.questionText}
       </h3>
@@ -32,6 +39,7 @@ export default function Question({
           Next Question
         </Button>
       ) : null}
+
       {selectedOption !== null && currentIndex === numOfQuestions - 1 ? (
         <Button
           className={`border bg-red-700 text-white rounded-2xl p-3 lg:cursor-pointer`}
