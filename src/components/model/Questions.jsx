@@ -6,6 +6,7 @@ export default function Question({
   currentIndex,
   dispatch,
   numOfQuestions,
+  selectedOption,
 }) {
   const currentQuestion = questions[currentIndex];
 
@@ -15,7 +16,11 @@ export default function Question({
         {currentQuestion.questionText}
       </h3>
 
-      <Options options={currentQuestion.options} />
+      <Options
+        options={currentQuestion.options}
+        dispatch={dispatch}
+        selectedOption={selectedOption}
+      />
       {currentIndex < numOfQuestions - 1 ? (
         <Button
           className={`border bg-zinc-900 text-white rounded-2xl p-3 lg:cursor-pointer`}
@@ -28,7 +33,7 @@ export default function Question({
       ) : (
         <Button
           className={`border bg-red-700 text-white rounded-2xl p-3 lg:cursor-pointer`}
-          onClick={() => dispatch({})}
+          onClick={() => dispatch({ type: "finished" })}
         >
           Finish Quiz
         </Button>
