@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export default function HomePage({ onClick }) {
   return (
     <header className="flex flex-col gap-5">
@@ -12,12 +14,13 @@ export default function HomePage({ onClick }) {
           reinforce key concepts. Take a few minutes to work through the
           questions and discover where your tech expertise stands today.
         </p>
-        <button
-          className="border p-[0.8em] rounded-2xl bg-zinc-900 text-white lg:cursor-pointer lg:transition-transform lg:hover:scale-110 lg:duration-300 lg:ease-in-out"
+        <Button
           onClick={onClick}
+          className={`border p-[0.8em] rounded-2xl bg-zinc-900 text-white lg:cursor-pointer lg:transition-transform lg:hover:scale-110 lg:duration-300 lg:ease-in-out`}
         >
+          {" "}
           Start Quiz
-        </button>
+        </Button>
       </div>
     </header>
   );
