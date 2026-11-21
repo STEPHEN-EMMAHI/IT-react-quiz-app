@@ -21,7 +21,7 @@ export default function Question({
         dispatch={dispatch}
         selectedOption={selectedOption}
       />
-      {currentIndex < numOfQuestions - 1 ? (
+      {/* {currentIndex < numOfQuestions - 1 ? (
         <Button
           className={`border bg-zinc-900 text-white rounded-2xl p-3 lg:cursor-pointer`}
           onClick={() =>
@@ -37,7 +37,25 @@ export default function Question({
         >
           Finish Quiz
         </Button>
-      )}
+      )} */}
+      {selectedOption !== null && currentIndex < numOfQuestions - 1 ? (
+        <Button
+          className={`border bg-zinc-900 text-white rounded-2xl p-3 lg:cursor-pointer`}
+          onClick={() =>
+            dispatch({ type: "nextQuestion", payload: currentIndex + 1 })
+          }
+        >
+          Next Question
+        </Button>
+      ) : null}
+      {selectedOption !== null && currentIndex === numOfQuestions - 1 ? (
+        <Button
+          className={`border bg-red-700 text-white rounded-2xl p-3 lg:cursor-pointer`}
+          onClick={() => dispatch({ type: "finished" })}
+        >
+          Finish Quiz
+        </Button>
+      ) : null}
     </div>
   );
 }
