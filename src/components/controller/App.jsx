@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import HomePage from "../model/HomePage";
 import Question from "../model/Questions";
+import { QUIZ_DATA } from "../../data/quizData";
 
 // state object to handle the initial state in the reducer function
 const initialQuizState = {
@@ -17,8 +18,10 @@ function quizReducer(currentState, action) {
       return {
         ...currentState,
         status: "active",
-        payload: action.questions,
+        questions: action.payload,
       };
+    case "nextQuestion":
+      return { ...currentState, currentIndex: action.payload };
   }
 }
 
@@ -27,15 +30,25 @@ function App() {
     quizReducer,
     initialQuizState,
   );
+
+  // derived state to calculate the length of the questions
+  const numOfQuestions = questions.length;
+
   return (
     <div>
       {status === "ready" && (
         <HomePage
-          // payload in dispatch function is undefined
-          onClick={() => dispatch({ type: "start", payload: questions })}
+          onClick={() => dispatch({ type: "start", payload: QUIZ_DATA })}
         />
       )}
-      {status === "active" && <Question currentIndex={currentIndex} />}
+      {status === "active" && (
+        <Question
+          currentIndex={currentIndex}
+          questions={questions}
+          dispatch={dispatch}
+          numOfQuestions={numOfQuestions}
+        />
+      )}
     </div>
   );
 }
