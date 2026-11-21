@@ -16,7 +16,7 @@ export default function HomePage({ onClick }) {
         </p>
         <Button
           onClick={onClick}
-          className={`border p-[0.8em] rounded-2xl bg-zinc-900 text-white lg:cursor-pointer lg:transition-transform lg:hover:scale-110 lg:duration-300 lg:ease-in-out`}
+          className={`border p-[0.8em] rounded-2xl bg-zinc-900 text-white lg:cursor-pointer lg:transition-transform lg:hover:scale-110 lg:duration-200 lg:ease-in-out`}
         >
           {" "}
           Start Quiz
