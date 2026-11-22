@@ -27,6 +27,7 @@ export default function Question({
         options={currentQuestion.options}
         dispatch={dispatch}
         selectedOption={selectedOption}
+        currentQuestion={currentQuestion}
       />
 
       {selectedOption !== null && currentIndex < numOfQuestions - 1 ? (
