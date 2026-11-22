@@ -43,6 +43,8 @@ function quizReducer(currentState, action) {
     }
     case "finished":
       return { ...currentState, status: "finished" };
+    case "restart":
+      return initialQuizState;
   }
 }
 
@@ -80,7 +82,11 @@ function App() {
         />
       )}
       {status === "finished" && (
-        <FinishQuiz totalPoints={totalPoints} points={points} />
+        <FinishQuiz
+          totalPoints={totalPoints}
+          points={points}
+          dispatch={dispatch}
+        />
       )}
     </div>
   );
