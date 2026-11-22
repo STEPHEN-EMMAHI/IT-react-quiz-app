@@ -79,7 +79,9 @@ function App() {
           totalPoints={totalPoints}
         />
       )}
-      {status === "finished" && <FinishQuiz />}
+      {status === "finished" && (
+        <FinishQuiz totalPoints={totalPoints} points={points} />
+      )}
     </div>
   );
 }

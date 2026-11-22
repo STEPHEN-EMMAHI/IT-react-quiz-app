@@ -1,3 +1,5 @@
+import { Check, X } from "lucide-react";
+
 export default function Options({
   options,
   dispatch,
@@ -29,13 +31,15 @@ export default function Options({
           {/* add correct to the correct answer */}
           {index === currentQuestion.correctAnswer &&
             selectedOption !== null && (
-              <span className="text-green-500">Correct</span>
+              // Check imported from lucide-react
+              <Check size={20} color="green" strokeWidth={3} />
             )}
 
           {/* add wrong to the wrong answers */}
           {index === selectedOption &&
             selectedOption !== currentQuestion.correctAnswer && (
-              <span className="text-red-500">wrong</span>
+              // X is imported from lucide-react
+              <X size={20} color="red" strokeWidth={3} />
             )}
         </button>
       ))}
