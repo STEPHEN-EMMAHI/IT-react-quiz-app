@@ -20,7 +20,7 @@ export default function Question({
           Question {currentIndex + 1} / {numOfQuestions}
         </span>
         <span>
-          points: {points}/{totalPoints}
+          points: {points} / {totalPoints}
         </span>
       </div>
 
