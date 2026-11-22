@@ -3,6 +3,7 @@ export default function Options({
   dispatch,
   selectedOption,
   currentQuestion,
+  points,
 }) {
   return (
     <div className="flex max-w-xl flex-col gap-6 px-8 pb-8 pt-4 lg:w-full lg:border lg:mx-8 lg:rounded-2xl">
@@ -15,6 +16,7 @@ export default function Options({
             dispatch({
               type: "selectOption",
               payload: index,
+              points,
             })
           }
         >

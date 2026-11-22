@@ -7,16 +7,21 @@ export default function Question({
   dispatch,
   numOfQuestions,
   selectedOption,
+  points,
+  totalPoints,
 }) {
   const currentQuestion = questions[currentIndex];
 
   return (
     <main className="h-screen flex flex-col justify-center items-center gap-4">
-      {/* question 1/total question */}
-      <div>
-        <p>
+      {/* question numbering and score */}
+      <div className="flex gap-12">
+        <span>
           Question {currentIndex + 1} / {numOfQuestions}
-        </p>
+        </span>
+        <span>
+          points: {points}/{totalPoints}
+        </span>
       </div>
 
       <h3 className="w-full max-w-2xl text-center px-2">
@@ -28,6 +33,7 @@ export default function Question({
         dispatch={dispatch}
         selectedOption={selectedOption}
         currentQuestion={currentQuestion}
+        points={points}
       />
 
       {selectedOption !== null && currentIndex < numOfQuestions - 1 ? (
