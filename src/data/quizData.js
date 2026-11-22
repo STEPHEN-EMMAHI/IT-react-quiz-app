@@ -9,6 +9,7 @@ export const QUIZ_DATA = [
       "A protocol used exclusively for sending emails",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -20,6 +21,7 @@ export const QUIZ_DATA = [
       "To encrypt network connections",
     ],
     correctAnswer: 2,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -27,6 +29,7 @@ export const QUIZ_DATA = [
       "Which HTTP method is commonly used to retrieve data from a server?",
     options: ["POST", "DELETE", "GET", "PATCH"],
     correctAnswer: 2,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -38,6 +41,7 @@ export const QUIZ_DATA = [
       "The client is not authorized to access the resource",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -50,6 +54,7 @@ export const QUIZ_DATA = [
       "Code that automatically converts JavaScript into HTML",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -61,6 +66,7 @@ export const QUIZ_DATA = [
       "To prevent functions from returning values",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -73,6 +79,7 @@ export const QUIZ_DATA = [
       "JSON.convert()",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -84,6 +91,7 @@ export const QUIZ_DATA = [
       "To automatically remove event listeners after execution",
     ],
     correctAnswer: 2,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -95,6 +103,7 @@ export const QUIZ_DATA = [
       "A JavaScript framework for building user interfaces",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -106,6 +115,7 @@ export const QUIZ_DATA = [
       "To manage relational databases",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -117,6 +127,7 @@ export const QUIZ_DATA = [
       "All JavaScript files are downloaded again",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -124,6 +135,7 @@ export const QUIZ_DATA = [
       "Which React hook is used to manage state in a functional component?",
     options: ["useEffect", "useRef", "useState", "useContext"],
     correctAnswer: 2,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -135,6 +147,7 @@ export const QUIZ_DATA = [
       "To define component props",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -146,6 +159,7 @@ export const QUIZ_DATA = [
       "They automatically sort the list alphabetically",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -158,6 +172,7 @@ export const QUIZ_DATA = [
       "A component that does not respond to user interactions",
     ],
     correctAnswer: 0,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -169,6 +184,7 @@ export const QUIZ_DATA = [
       "To prevent components from re-rendering",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -180,6 +196,7 @@ export const QUIZ_DATA = [
       "To automatically generate API endpoints",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -191,6 +208,7 @@ export const QUIZ_DATA = [
       "A web browser extension for blocking advertisements",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -203,6 +221,7 @@ export const QUIZ_DATA = [
       "To improve the visual appearance of a website",
     ],
     correctAnswer: 0,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -214,6 +233,7 @@ export const QUIZ_DATA = [
       "A component used to display API documentation",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -225,6 +245,7 @@ export const QUIZ_DATA = [
       "A database system used solely to store raw text files",
     ],
     correctAnswer: 1,
+    points: 10,
   },
   {
     id: crypto.randomUUID(),
@@ -236,5 +257,6 @@ export const QUIZ_DATA = [
       "A database query language used to retrieve records from a server",
     ],
     correctAnswer: 1,
+    points: 10,
   },
 ];

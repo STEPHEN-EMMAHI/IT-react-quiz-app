@@ -11,6 +11,7 @@ const initialQuizState = {
   status: "ready",
   currentIndex: 0,
   selectedOption: null,
+  points: 0,
 };
 
 // reducer function to handle to determine the next state
@@ -28,19 +29,36 @@ function quizReducer(currentState, action) {
         currentIndex: action.payload,
         selectedOption: null,
       };
-    case "selectOption":
-      return { ...currentState, selectedOption: action.payload };
+    case "selectOption": {
+      const currentQuestion = currentState.questions[currentState.currentIndex];
+      const isCorrect = action.payload === currentQuestion.correctAnswer;
+
+      return {
+        ...currentState,
+        selectedOption: action.payload,
+        points: isCorrect
+          ? currentState.points + currentQuestion.points
+          : currentState.points,
+      };
+    }
     case "finished":
       return { ...currentState, status: "finished" };
   }
 }
 
 function App() {
-  const [{ questions, status, currentIndex, selectedOption }, dispatch] =
-    useReducer(quizReducer, initialQuizState);
+  const [
+    { questions, status, currentIndex, selectedOption, points },
+    dispatch,
+  ] = useReducer(quizReducer, initialQuizState);
 
   // derived state to calculate the length of the questions
   const numOfQuestions = questions.length;
+
+  const totalPoints = questions.reduce(
+    (total, question) => total + question.points,
+    0,
+  );
 
   return (
     <div>
@@ -57,6 +75,8 @@ function App() {
           numOfQuestions={numOfQuestions}
           questionId={questions.id}
           selectedOption={selectedOption}
+          points={points}
+          totalPoints={totalPoints}
         />
       )}
       {status === "finished" && <FinishQuiz />}
