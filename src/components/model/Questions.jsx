@@ -1,5 +1,6 @@
 import Button from "./Button";
 import Options from "./Options";
+import Timer from "./Timer";
 
 export default function Question({
   questions,
@@ -9,6 +10,7 @@ export default function Question({
   selectedOption,
   points,
   totalPoints,
+  remainingSeconds,
 }) {
   const currentQuestion = questions[currentIndex];
 
@@ -35,6 +37,8 @@ export default function Question({
         currentQuestion={currentQuestion}
         points={points}
       />
+
+      <Timer remainingSeconds={remainingSeconds} dispatch={dispatch} />
 
       {selectedOption !== null && currentIndex < numOfQuestions - 1 ? (
         <Button
