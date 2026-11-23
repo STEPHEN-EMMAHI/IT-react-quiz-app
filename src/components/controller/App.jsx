@@ -13,6 +13,7 @@ const initialQuizState = {
   currentIndex: 0,
   selectedOption: null,
   points: 0,
+  remainingSeconds: null,
 };
 
 // reducer function to handle to determine the next state
@@ -23,6 +24,7 @@ function quizReducer(currentState, action) {
         ...currentState,
         status: "active",
         questions: action.payload,
+        remainingSeconds: 600,
       };
     case "nextQuestion":
       return {
@@ -46,12 +48,30 @@ function quizReducer(currentState, action) {
       return { ...currentState, status: "finished" };
     case "restart":
       return initialQuizState;
+    case "timerTicking":
+      return {
+        ...currentState,
+        remainingSeconds: currentState.remainingSeconds - 1,
+        status:
+          currentState.remainingSeconds === 1
+            ? "finished"
+            : currentState.status,
+      };
+    default:
+      throw new Error("Uknown action");
   }
 }
 
 function App() {
   const [
-    { questions, status, currentIndex, selectedOption, points },
+    {
+      questions,
+      status,
+      currentIndex,
+      selectedOption,
+      points,
+      remainingSeconds,
+    },
     dispatch,
   ] = useReducer(quizReducer, initialQuizState);
 
@@ -82,6 +102,7 @@ function App() {
           selectedOption={selectedOption}
           points={points}
           totalPoints={totalPoints}
+          remainingSeconds={remainingSeconds}
         />
       )}
       {status === "finished" && (
