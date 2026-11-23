@@ -3,6 +3,7 @@ import HomePage from "../model/HomePage";
 import Question from "../model/Questions";
 import { QUIZ_DATA } from "../../data/quizData";
 import FinishQuiz from "../model/FinishQuiz";
+import { shuffling } from "../../data/shuffle";
 
 // state object to handle the initial state in the reducer function
 const initialQuizState = {
@@ -66,7 +67,9 @@ function App() {
     <div>
       {status === "ready" && (
         <HomePage
-          onClick={() => dispatch({ type: "start", payload: QUIZ_DATA })}
+          onClick={() =>
+            dispatch({ type: "start", payload: shuffling(QUIZ_DATA) })
+          }
         />
       )}
       {status === "active" && (
